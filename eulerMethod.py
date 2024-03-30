@@ -110,6 +110,15 @@ def eulerMethod(ed, x0, y0, cantIteraciones, h):
         y0 = y1
     return matrizDatos
 
+# Cálculo de Errores
+def calcularErrores(matrizDatos, valorExacto):
+    valorAproximacion = matrizDatos[len(matrizDatos)-1][2]
+    errorAbsoluto = np.absolute(valorExacto-valorAproximacion)
+    error = errorAbsoluto/valorExacto
+    print(f"VALOR APROXIMACIÓN: {valorAproximacion}")
+    print(f"VALOR EXACTO: {valorExacto}")
+    print(f"ERROR: {'{:.3f}'.format(error*100)}%")
+
 # --- EJERCICIO 1 --- VERIFICADO
 
 # Ecuación Diferencial Ordinaria
@@ -121,7 +130,7 @@ x0_ej1 = 1
 y0_ej1 = 1
 
 # Paso h, x final -> y(1.5)
-h1 = 0.05
+h1 = 0.1
 xFinal1 = 1.5
 iteraciones1 = (xFinal1-x0_ej1)/h1
 
@@ -138,6 +147,9 @@ def y1(x):
 # Comparativa de gráficas
 #graficarSol(y1, data, x0=x0_ej1, xFinal=xFinal1) # DESCOMENTAR PARA VER GRÁFICAS
 
+# Error porcentual
+#calcularErrores(data, y1(xFinal1)) # DESCOMENTAR PARA VER EL ERROR
+
 
 # --- EJERCICIO 2 --- VERIFICADO
 
@@ -150,7 +162,7 @@ x0_ej2 = 0
 y0_ej2 = 0
 
 # Paso h, x final -> I(0.5)
-h2 = 0.05
+h2 = 0.1
 xFinal2 = 0.5
 iteraciones2 = (xFinal2-x0_ej2)/h2
 
@@ -165,3 +177,6 @@ def y2(x):
 
 # Comparativa de gráficas
 #graficarSol(y2, data2, x0=x0_ej2, xFinal=xFinal2) # DESCOMENTAR PARA VER GRÁFICAS
+
+# Error porcentual
+#calcularErrores(data2, y2(xFinal2)) # DESCOMENTAR PARA VER EL ERROR
