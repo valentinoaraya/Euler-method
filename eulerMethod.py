@@ -67,10 +67,10 @@ def generarTabla(matriz, ejercicio):
     root.mainloop()
 
 # Graficar Solución exacta y Aproximación numérica con el método de Euler
-def graficarSol(funcion, matrizDatos):
+def graficarSol(funcion, matrizDatos, x0, xFinal):
 
     # Definir los valores de x
-    x = np.linspace(1, 1.5, 400)
+    x = np.linspace(x0, xFinal, 400)
 
     # Calcular los valores de y
     y = funcion(x)
@@ -110,7 +110,7 @@ def eulerMethod(ed, x0, y0, cantIteraciones, h):
         y0 = y1
     return matrizDatos
 
-# --- EJERCICIO 1 ---
+# --- EJERCICIO 1 --- VERIFICADO
 
 # Ecuación Diferencial Ordinaria
 def f(x,y):
@@ -121,7 +121,7 @@ x0_ej1 = 1
 y0_ej1 = 1
 
 # Paso h, x final -> y(1.5)
-h1 = 0.1
+h1 = 0.05
 xFinal1 = 1.5
 iteraciones1 = (xFinal1-x0_ej1)/h1
 
@@ -129,13 +129,39 @@ iteraciones1 = (xFinal1-x0_ej1)/h1
 data = eulerMethod(ed=f, x0=x0_ej1, y0=y0_ej1, cantIteraciones=iteraciones1, h=h1)
 
 # Generación de tabla
-generarTabla(data, ejercicio="1")
+#generarTabla(data, ejercicio="1") # DESCOMENTAR PARA VER TABLA
 
 # Solución Particular del problema (Calculada en hoja)
-def y(x):
+def y1(x):
     return (np.e**(0.1*(x**2)))*(1/(np.e**0.1))
 
 # Comparativa de gráficas
-graficarSol(y,data)
+#graficarSol(y1, data, x0=x0_ej1, xFinal=xFinal1) # DESCOMENTAR PARA VER GRÁFICAS
 
-# --- EJERCICIO 2 ---
+
+# --- EJERCICIO 2 --- VERIFICADO
+
+# Ecuacion Diferencial Ordinaria
+def f2(x,y):
+    return 15-3*y
+
+# Condición Inicial -> I(0) = 0
+x0_ej2 = 0
+y0_ej2 = 0
+
+# Paso h, x final -> I(0.5)
+h2 = 0.05
+xFinal2 = 0.5
+iteraciones2 = (xFinal2-x0_ej2)/h2
+
+# Resuelvo
+data2 = eulerMethod(ed=f2, x0=x0_ej2, y0=y0_ej2, cantIteraciones=iteraciones2, h=h2)
+
+#generarTabla(matriz=data2, ejercicio="2") # DESCOMENTAR PARA VER TABLA
+
+# Solución Particular del probelma (Calculada en hoja)
+def y2(x):
+    return 5-5*np.e**(-3*x)
+
+# Comparativa de gráficas
+#graficarSol(y2, data2, x0=x0_ej2, xFinal=xFinal2) # DESCOMENTAR PARA VER GRÁFICAS
