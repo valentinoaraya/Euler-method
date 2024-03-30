@@ -6,7 +6,7 @@ Implemento las mismas librerías, funciones y la misma forma de trabajar
 que en el archivo "eulerMethod.py". La mayoría de explicaciones están en 
 ese archivo.
 """
-from eulerMethod import eulerMethod, generarTabla, graficarSol, calcularErrores
+from eulerMethod import eulerMethod, generarTabla
 import sympy as sp
 
 # Ingresar la EDO por teclado
@@ -17,7 +17,6 @@ x, y = sp.symbols("x y")
 
 try:
     edo = sp.sympify(edo_str)
-    ed = sp.Eq(sp.diff(y, x), edo)
 except sp.SympifyError:
     print("Error: La entrada no es una expresión válida.")
     exit()
@@ -39,12 +38,3 @@ iteraciones = (xFinal-x0)/h
 # Resuelvo
 data = eulerMethod(funcion, x0, y0, iteraciones, h)
 generarTabla(data, ejercicio="")
-
-# Resuelvo la EDO exacta con sympy
-solucion_general = sp.dsolve(ed)
-condicion_inicial = {y.subs(x, x0): y0}
-solucion_particular = sp.dsolve(ed, ics=condicion_inicial)
-print(solucion_particular)
-
-#graficarSol(0,data,x0,xFinal)
-#calcularErrores(data,)
