@@ -13,6 +13,9 @@ ejecutar estas dos acciones puede ser ignorado (funciones "generarTabla" y "graf
 ya que es algo extra que agregué y no lo pide el trabajo. Me ayudé con ChatGPT para poder
 implementar estas funciones y las adapté a mi código.
 
+IMPORTANTE -> COMENTAR LAS FUNCIONES (generarTabla, graficarSol, calcularErrores) DE AMBOS 
+EJERCICIOS ANTES DE EJECUTAR EL ARCHIVO "eulerMethodUP.py"
+
 """
 
 # Importo funciones matemáticas
