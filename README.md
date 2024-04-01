@@ -2,7 +2,7 @@
 
 Trabajo realizado para Análisis Matemático II - UTN FRSR.
 
-Profesores:
+### Profesores:
 - Daniela Armijo
 - Alejandro Javier Gonzalez
 
@@ -25,6 +25,8 @@ Las funciones "generarTabla()" y "graficarSol()" son funciones cuyo código inte
 Ambos ejercicios de este archivo fueron verificados manualmente en lápiz y papel, también con ayuda de algunos softwares y las respuestas que dá el programa son bastante acertadas. 
 
 Recomendación: Antes de ejecutar el código leer bien los comentarios de los archivos, las funciones están comentadas para que no se superpongan, los comentarios indican cuáles deben descomentarse.
+
+¡IMPORTANTE! -> COMENTAR LAS FUNCIONES (generarTabla, graficarSol, calcularErrores) DE AMBOS EJERCICIOS ANTES DE EJECUTAR EL ARCHIVO "eulerMethodUP.py".
 
 ### eulerMethodUP.py
 En este archivo permito al usuario ingresar la EDO mediante teclado, por eso añado al nombre las siglas UP (User Prompt).
