@@ -1,3 +1,4 @@
+#COMENTARIOS: PERFECTO ESTÁ TU TRABAJO! EXCELENTE, ESPERAMOS LO HAYAS DISFRUTADO Y TE SEA ÚTIL 
 # Método de Euler para resolver EDO's en Python 🐍
 
 Trabajo realizado para Análisis Matemático II - UTN FRSR.
